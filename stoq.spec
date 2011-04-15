@@ -2,7 +2,7 @@
 
 %define name stoq
 %define version 0.9.15
-%define release %mkrel 0
+%define release %mkrel 2
 
 Summary: A powerful retail system
 Name: %{name}
@@ -13,7 +13,7 @@ Group: System/Libraries
 URL: http://www.stoq.com.br/
 Source: stoq-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-Requires: python-kiwi >= 1.9.24, stoqlib >= 0.9.15
+Requires: python-kiwi >= 1.9.24, stoqlib >= 0.9.15, python-reportlab, python-psycopg2
 BuildRequires: python-kiwi >= 1.9.27, stoqlib >= 0.9.15
 BuildArch: noarch
 
@@ -28,7 +28,6 @@ usability, good devices support, and useful features for retails.
 %{__python} setup.py build
 
 %install
-sed -i -e 's|share/doc/stoq|share/doc/%{name}-%{version}|' setup.py
 mkdir -p %{_etcdir}/stoq
 rm -rf %{buildroot}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
