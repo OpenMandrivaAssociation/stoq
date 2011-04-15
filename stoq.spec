@@ -15,6 +15,7 @@ Source: stoq-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: python-kiwi >= 1.9.24, stoqlib >= 0.9.15, python-reportlab, python-psycopg2
 BuildRequires: python-kiwi >= 1.9.27, stoqlib >= 0.9.15
+BuildRequires: python-devel
 BuildArch: noarch
 
 %description
