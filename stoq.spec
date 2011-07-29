@@ -2,7 +2,7 @@
 
 %define name stoq
 %define version 1.0.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: A powerful retail system
 Name: %{name}
@@ -62,7 +62,7 @@ rm -rf %{buildroot}
 %{_datadir}/stoq/*
 %{_datadir}/polkit-1/*
 %{_datadir}/icons/*
-%{_libdir}/stoqlib/*
+/usr/lib/stoqlib/*
 %{_datadir}/applications/stoq.desktop
-/usr/lib/python2.6/site-packages/*
-/usr/lib/python2.6/site-packages/stoq-1.0.0.90-py2.6.egg-info
+/usr/lib/python2.7/site-packages/*
+/usr/lib/python2.7/site-packages/stoq-1.0.0.90-py2.7.egg-info
