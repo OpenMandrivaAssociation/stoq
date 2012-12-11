@@ -1,18 +1,13 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
-%define name stoq
-%define version 1.0.0
-%define release %mkrel 2
-
 Summary: A powerful retail system
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name:    stoq
+Version: 1.0.0
+Release: 3
 License: GPL
 Group: System/Libraries
 URL: http://www.stoq.com.br/
 Source: stoq-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: postgresql >= 8.4
 Requires: pygtk2 >= 2.16
 Requires: pypoppler >= 0.12.1
@@ -32,8 +27,9 @@ BuildArch: noarch
 Stoq is a suite of Retail Management System applications.
 It includes the following applications;
 Point of Sales, Cash register, Sales, Purchase Orders, Inventory control,
-Customer Relationship Management (CRM), Financial Accounting, Accounts Payable and 
-Accounts Receivable, Printable Reports, Employees and Suppliers registry.
+Customer Relationship Management (CRM), Financial Accounting, 
+Accounts Payable and Accounts Receivable, Printable Reports, Employees 
+and Suppliers registry.
 
 %prep
 %setup -q -n stoq-%{version}
@@ -43,12 +39,9 @@ Accounts Receivable, Printable Reports, Employees and Suppliers registry.
 
 %install
 mkdir -p %{_etcdir}/stoq
-rm -rf %{buildroot}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root, 0755)
@@ -65,4 +58,13 @@ rm -rf %{buildroot}
 /usr/lib/stoqlib/*
 %{_datadir}/applications/stoq.desktop
 /usr/lib/python2.7/site-packages/*
-/usr/lib/python2.7/site-packages/stoq-1.0.0.90-py2.7.egg-info
+
+
+%changelog
+* Fri Jul 29 2011 Leonardo Coelho <leonardoc@mandriva.com> 1.0.0-2mdv2012.0
++ Revision: 692304
+- bump new version
+- doc directory changed
+- first package version on mdv
+- Created package structure for stoq.
+
