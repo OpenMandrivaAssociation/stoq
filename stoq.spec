@@ -7,6 +7,7 @@ Group:		System/Libraries
 Url:		http://www.stoq.com.br/
 Source0:	stoq-%{version}.tar.gz
 BuildRequires:	python-kiwi >= 1.9.28
+BuildRequires:	python-setuptools
 BuildRequires:	pkgconfig(python)
 Requires:	postgresql >= 8.4
 Requires:	pygtk2 >= 2.16
