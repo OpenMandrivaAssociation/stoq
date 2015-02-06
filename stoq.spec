@@ -1,7 +1,7 @@
 Summary:	A powerful retail system
 Name:		stoq
 Version:	1.0.0
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.stoq.com.br/
