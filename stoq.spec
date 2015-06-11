@@ -8,7 +8,7 @@ Url:		http://www.stoq.com.br/
 Source0:	%{version}.tar.gz
 BuildRequires:	python-kiwi >= 1.9.28
 BuildRequires:	python-setuptools
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python2)
 Requires:	postgresql >= 8.4
 Requires:	pygtk2 >= 2.16
 Requires:	pypoppler >= 0.12.1
@@ -42,7 +42,7 @@ and Suppliers registry.
 %{_datadir}/icons/*
 %{_prefix}/lib/stoqlib/*
 %{_datadir}/applications/stoq.desktop
-%{python_sitelib}/*
+%{py2_sitelib}/*
 
 #----------------------------------------------------------------------------
 
@@ -50,11 +50,11 @@ and Suppliers registry.
 %setup -q -n stoq-%{version}
 
 %build
-python setup.py build
+%{__python2} setup.py build
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/stoq
-python setup.py install -O1 --skip-build --root %{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 
 %find_lang %{name}
