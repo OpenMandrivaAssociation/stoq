@@ -42,7 +42,7 @@ and Suppliers registry.
 %{_datadir}/icons/*
 %{_prefix}/lib/stoqlib/*
 %{_datadir}/applications/stoq.desktop
-%{py2_sitelib}/*
+%{python2_sitelib}/*
 
 #----------------------------------------------------------------------------
 
