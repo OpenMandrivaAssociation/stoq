@@ -35,14 +35,12 @@ and Suppliers registry.
 %{_bindir}/stoq
 %{_bindir}/stoqcreatedbuser
 %{_bindir}/stoqdbadmin
-%{_bindir}/stoqruncmd
 %{_bindir}/stoq-daemon
 %{_datadir}/gnome/help/stoq
 %{_sysconfdir}/stoq
 %{_datadir}/stoq/*
 %{_datadir}/polkit-1/*
 %{_datadir}/icons/*
-%{_prefix}/lib/stoqlib/*
 %{_datadir}/applications/stoq.desktop
 %{python2_sitelib}/*
 
