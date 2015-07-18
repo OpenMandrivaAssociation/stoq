@@ -1,13 +1,13 @@
 Summary:	A powerful retail system
 Name:		stoq
 Version:	1.9.1
-Release:	1
+Release:	0.1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.stoq.com.br/
 Source0:	%{version}.tar.gz
 BuildRequires:	python-kiwi >= 1.9.28
-BuildRequires:	python2-setuptools
+BuildRequires:	python-setuptools
 BuildRequires:	pkgconfig(python2)
 Requires:	postgresql >= 8.4
 Requires:	pygtk2 >= 2.16
@@ -42,7 +42,7 @@ and Suppliers registry.
 %{_datadir}/polkit-1/*
 %{_datadir}/icons/*
 %{_datadir}/applications/stoq.desktop
-%{python2_sitelib}/*
+%{python_sitelib}/*
 
 #----------------------------------------------------------------------------
 
@@ -50,11 +50,11 @@ and Suppliers registry.
 %setup -q -n stoq-%{version}
 
 %build
-%{__python2} setup.py build
+%{__python} setup.py build
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/stoq
-%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 
 %find_lang %{name}
