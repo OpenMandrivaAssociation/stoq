@@ -52,6 +52,9 @@ sed -i 's/dateutil/python-dateutil/' requirements.txt
 sed -i 's/PIL/pillow/' requirements.txt
 sed -i 's/kiwi-gtk/kiwi/' requirements.txt
 
+# pygtk has no egg
+sed -i '/PyGTK/d' requirements.txt
+
 %build
 %{__python2} setup.py build
 
