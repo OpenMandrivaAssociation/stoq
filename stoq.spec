@@ -12,14 +12,14 @@ BuildRequires:	pkgconfig(python2)
 Requires:	postgresql >= 8.4
 Requires:	pygtk2 >= 2.16
 Requires:	pypoppler >= 0.12.1
-Requires:	python-dateutil >= 1.4.1
-Requires:	python-imaging >= 1.1.5
+Requires:	python2-dateutil >= 1.4.1
+Requires:	python2-imaging >= 1.1.5
 Requires:	python-gudev >= 147
 Requires:	python-kiwi >= 1.9.29
 Requires:	python-mako >= 0.2.5
-Requires:	python-psycopg2 >= 2.0.5
+Requires:	python2-psycopg2 >= 2.0.5
 Requires:	python-reportlab >= 2.4
-Requires:	python-zope-interface >= 3.0.1
+Requires:	python2-zope-interface >= 3.0.1
 BuildArch:	noarch
 
 %description
@@ -48,6 +48,9 @@ and Suppliers registry.
 
 %prep
 %setup -q -n stoq-%{version}
+sed -i 's/dateutil/python-dateutil/' requirements.txt
+sed -i 's/PIL/pillow/' requirements.txt
+sed -i 's/kiwi-gtk/kiwi/' requirements.txt
 
 %build
 %{__python2} setup.py build
