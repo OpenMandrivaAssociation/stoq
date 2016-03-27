@@ -1,11 +1,11 @@
 Summary:	A powerful retail system
 Name:		stoq
-Version:	1.9.1
-Release:	2
+Version:	1.10.4
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.stoq.com.br/
-Source0:	%{version}.tar.gz
+Source0:	stoq-%{version}.tar.gz
 BuildRequires:	python-kiwi >= 1.9.28
 BuildRequires:	python2-setuptools
 BuildRequires:	pkgconfig(python2)
