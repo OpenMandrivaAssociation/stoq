@@ -33,9 +33,7 @@ and Suppliers registry.
 %files -f %{name}.lang
 %doc AUTHORS CONTRIBUTORS COPYING README NEWS
 %{_bindir}/stoq
-%{_bindir}/stoqcreatedbuser
 %{_bindir}/stoqdbadmin
-%{_bindir}/stoq-daemon
 %{_datadir}/gnome/help/stoq
 %{_sysconfdir}/stoq
 %{_datadir}/stoq/*
