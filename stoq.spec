@@ -1,7 +1,7 @@
 Summary:	A powerful retail system
 Name:		stoq
 Version:	1.10.4
-Release:	0.3
+Release:	0.4
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.stoq.com.br/
@@ -48,7 +48,7 @@ and Suppliers registry.
 %setup -q -n stoq-%{version}
 
 sed -i 's/kiwi-gtk/kiwi/' requirements.txt
-sed -i 's/pillow/pil/' requirements.txt
+sed -i 's/Pillow/pil/' requirements.txt
 
 %build
 %{__python} setup.py build
