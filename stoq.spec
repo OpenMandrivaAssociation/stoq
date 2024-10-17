@@ -4,7 +4,7 @@ Version:	1.10.4
 Release:	2
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://www.stoq.com.br/
+Url:		https://www.stoq.com.br/
 Source0:	stoq-%{version}.tar.gz
 BuildRequires:	python-kiwi >= 1.9.28
 BuildRequires:	python2-setuptools
